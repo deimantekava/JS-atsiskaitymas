@@ -8,3 +8,22 @@ pamatyti jo pateikto svorio kovertavimą į:
 Pastaba: rezultatas turi būti matomas pateikus formą ir atvaizduojamas
 <div id="output"></div> viduje. Gautus atsakymus stilizuokite naudojant CSS;
 ------------------------------------------------------------------- */
+
+const searchForm = document.querySelector('form');
+const outputForm = document.getElementById('output');
+
+if (searchForm) {
+  searchForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const searchInput = document.getElementById('search');
+
+    const svarai = searchInput.value * 2.2046;
+    const gramai = searchInput.value / 0.001;
+    const uncijos = searchInput.value * 35.274;
+
+    const message = `Svarai: ${svarai} lb, Gramai: ${gramai} g, Uncijos: ${uncijos} oz`;
+
+    outputForm.textContent = message;
+  });
+}
