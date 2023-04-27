@@ -4,13 +4,13 @@ su tekstu "CLICK ME". Paspaudimų rezultatas turi būti matomas dešinėje
 pusėje esančiame "state" skaičiavimo bloke (<div id="btn__state">0</div>)
 ------------------------------------------------------------------- */
 
-console.log('Hello');
-
-const count = 0;
 const btn = document.getElementById('btn__element');
-const result = document.getElementById('btn__state');
+btn.onclick = Counter;
+const clicks = document.getElementById('btn__state');
 
-btn.addEventListener('click', (e) => {
-  count++;
-  result.innerHTML = count;
-});
+var a = 0;
+
+function Counter() {
+  a += 1;
+  clicks.innerHTML = a;
+}
