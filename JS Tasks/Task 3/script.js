@@ -12,3 +12,34 @@ būti stilizuota su CSS ir būti responsive;
 -------------------------------------------------------------------------- */
 
 const ENDPOINT = 'https://api.github.com/users';
+
+const showUsers = document.getElementById('btn');
+const outPut = document.getElementById('output');
+
+const users = async () => {
+  try {
+    const responce = await fetch(ENDPOINT);
+    const data = await responce.json();
+    return data;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+const renderUserList = (array) => {
+  array.forEach((user) => {
+    showUsers.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const login = document.createElement('p');
+      login.textContent = user.login;
+      console.log(login);
+      const avatar = document.createElement('img');
+      avatar.src = user.avatar_url;
+
+      outPut.append(avatar, login);
+    });
+  });
+};
+
+users();
