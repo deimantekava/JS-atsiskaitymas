@@ -19,3 +19,22 @@ const users = [
   { id: '8', name: 'Simon Peterson', age: 30 },
   { id: '9', name: 'Daniel Cane', age: 51 },
 ];
+
+// 1
+
+function getUserAverageAge() {
+  result = 0;
+  for (let i = 0; i < users.length; i++) {
+    const friend = (result += parseInt(users[i].age)) / users.length;
+    console.log(friend);
+  }
+}
+getUserAverageAge();
+
+// 2
+function getUsersNames() {
+  const newNameMasive = users.map((user) => user.name);
+  console.log(newNameMasive);
+}
+
+getUsersNames();
