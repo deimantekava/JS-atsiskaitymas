@@ -27,3 +27,27 @@
   margin-top: 50px;
   color: #333;
 }
+
+#output {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.cart-container {
+  max-width: 350px;
+  border: 0.5px solid black;
+  border-radius: 5px;
+  padding: 1rem;
+  margin-top: 2rem;
+  background-color: antiquewhite;
+}
+
+.brand-class {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-bottom: 0.5rem;
+}
