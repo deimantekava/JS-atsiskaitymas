@@ -20,7 +20,7 @@ const users = async () => {
   try {
     const responce = await fetch(ENDPOINT);
     const data = await responce.json();
-    return data;
+    renderUserList(data);
   } catch (err) {
     console.log(err);
   }
@@ -30,14 +30,20 @@ const renderUserList = (array) => {
   array.forEach((user) => {
     showUsers.addEventListener('click', function (e) {
       e.preventDefault();
+      const cartContainer = document.createElement('div');
+      cartContainer.classList.add('cart-container');
 
       const login = document.createElement('p');
+      login.classList.add('login-p');
       login.textContent = user.login;
-      console.log(login);
+
       const avatar = document.createElement('img');
+      avatar.classList.add('img');
       avatar.src = user.avatar_url;
 
-      outPut.append(avatar, login);
+      cartContainer.append(avatar, login);
+
+      outPut.append(cartContainer);
     });
   });
 };
