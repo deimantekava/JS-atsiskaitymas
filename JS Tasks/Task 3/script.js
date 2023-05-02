@@ -44,6 +44,9 @@ const renderUserList = (array) => {
       cartContainer.append(avatar, login);
 
       outPut.append(cartContainer);
+
+      const message = document.getElementById('message');
+      message.style.display = 'none';
     });
   });
 };
